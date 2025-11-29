@@ -1,0 +1,7 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(538,5): warning MSB8028: The intermediate directory (EarthquakeSim\x64\Debug\) contains files shared from another project (Kostur.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Main.cpp
+  Util.cpp
+D:\EarthquakeSim\Source\Util.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+D:\EarthquakeSim\Source\Util.cpp(165): warning C4715: 'loadImageToCursor': not all control paths return a value
+  Kostur.vcxproj -> D:\EarthquakeSim\x64\Debug\EarthquakeSim.exe
