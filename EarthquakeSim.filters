@@ -21,6 +21,9 @@
     <ClCompile Include="Source\Util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\stb_image.h">
@@ -29,8 +32,17 @@
     <ClInclude Include="Header\Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="shake.frag">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="shake.vert">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -126,14 +126,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Shape.cpp" />
     <ClCompile Include="Source\Util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\Shape.h" />
     <ClInclude Include="Header\stb_image.h" />
     <ClInclude Include="Header\Util.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Shaders\rect.frag" />
+    <None Include="Shaders\rect.vert" />
+    <None Include="Shaders\shake.frag" />
+    <None Include="Shaders\shake.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

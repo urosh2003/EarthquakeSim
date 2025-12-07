@@ -1,0 +1,18 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(538,5): warning MSB8028: The intermediate directory (EarthquakeSim\x64\Debug\) contains files shared from another project (Kostur.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Main.cpp
+D:\EarthquakeSim\Source\Main.cpp(58,34): warning C4267: '=': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(105,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(175,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(176,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(177,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(181,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(182,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(183,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(188,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(194,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(198,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(218,23): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(219,24): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(224,9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\EarthquakeSim\Source\Main.cpp(223,9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  EarthquakeSim.vcxproj -> D:\EarthquakeSim\x64\Debug\EarthquakeSim.exe

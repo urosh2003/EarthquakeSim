@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Util.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\Shape.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\stb_image.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Util.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Shaders\shake.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\shake.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\rect.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\rect.vert">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{793fcb3d-b03b-4ef5-8d93-581f88aaf6f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{85b929f4-43c5-42c1-a65f-2cb040bd4a9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{a976f3e2-1805-4e69-a233-b04aff967578}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
