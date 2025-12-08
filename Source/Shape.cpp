@@ -59,3 +59,26 @@ std::vector<Vec2> makeHexagon()
     }
     return v;
 }
+
+bool pointInShape(const Vec2& p, const std::vector<Vec2>& verts)
+{
+    bool inside = false;
+    int n = verts.size();
+
+    for (int i = 0; i < n; i++)
+    {
+        int j = (i - 1 + n) % n;
+
+        float xi = verts[i].x, yi = verts[i].y;
+        float xj = verts[j].x, yj = verts[j].y;
+
+        bool intersect = ((yi > p.y) != (yj > p.y)) &&
+            (p.x < (xj - xi) * (p.y - yi) / (yj - yi + 0.000001f) + xi);
+
+        if (intersect)
+            inside = !inside;
+    }
+
+    return inside;
+}
+

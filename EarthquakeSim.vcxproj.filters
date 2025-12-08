@@ -30,10 +30,10 @@
     <None Include="Shaders\shake.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\rect.frag">
+    <None Include="Shaders\text.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\rect.vert">
+    <None Include="Shaders\text.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

@@ -1,6 +1,10 @@
 #version 330 core
 
 layout(location = 0) in vec2 aPos;
+layout(location = 1) in vec2 aUV;
+
+out vec2 vUV;
+
 
 uniform vec2 u_position;
 uniform float u_rotation;
@@ -24,4 +28,5 @@ void main()
     p.x /= u_aspect_ratio;
 
     gl_Position = vec4(p, 0.0, 1.0);
+    vUV = aUV;
 }
