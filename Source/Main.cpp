@@ -194,8 +194,7 @@ void initTextRendering() {
     glBindVertexArray(0);
 }
 
-// Function to render text
-// Function to render text
+
 // Function to render UTF-8 text
 void renderText(unsigned int shader, const std::string& text, float x, float y, float scale, glm::vec3 color) {
     glUseProgram(shader);
@@ -259,21 +258,15 @@ auto fmt = [](float v) {
     };
 void handleTextRendering()
 {
-    // Draw the shake parameters
-
-
     std::string durationText = "Shake Duration: " + fmt(maxShakeDuration);
     std::string intensityText = "Shake Intensity: " + fmt(shakeIntensity);
     std::string speedText = "Shake Oscilation: " + fmt(oscilation);
 
-
-    // Render text in top-left corner
     renderText(textShader, "Uro\xC5\xA1 Raduki\xC4\x87", 10.0f, 40.0f, 0.7f, glm::vec3(1.0f, 1.0f, 1.0f));    renderText(textShader, "SV54/2022", 10.0f, 70.0f, 0.7f, glm::vec3(1.0f, 1.0f, 1.0f));
     renderText(textShader, durationText, 10.0f, 100.0f, 0.7f, glm::vec3(1.0f, 1.0f, 1.0f));
     renderText(textShader, intensityText, 10.0f, 140.0f, 0.7f, glm::vec3(1.0f, 1.0f, 1.0f));
     renderText(textShader, speedText, 10.0f, 180.0f, 0.7f, glm::vec3(1.0f, 1.0f, 1.0f));
 
-    // Add instructions
     renderText(textShader, "Controls:", 10.0f, 210.0f, 0.6f, glm::vec3(1.0f, 1.0f, 1.0f));
     renderText(textShader, "1/2: Decrease/Increase Duration", 10.0f, 235.0f, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f));
     renderText(textShader, "3/4: Decrease/Increase Intensity", 10.0f, 260.0f, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f));
@@ -281,7 +274,6 @@ void handleTextRendering()
     renderText(textShader, "C,S,T,R,E,H: Add Shapes", 10.0f, 310.0f, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f));
     renderText(textShader, "Space: Trigger Shake", 10.0f, 335.0f, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f));
     renderText(textShader, "ESC: Quit", 10.0f, 360.0f, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f));
-
 }
 
 
@@ -333,8 +325,8 @@ std::vector<Vec2> makeUVsForEllipseFan(const std::vector<Vec2>& verts)
     std::vector<Vec2> uv;
     uv.reserve(verts.size());
 
-    float width = 2.0f;   // matches 2 * cos(a)
-    float height = 1.0f;  // matches 1 * sin(a)
+    float width = 2.0f;
+    float height = 1.0f; 
 
     for (int i = 0; i < verts.size(); i++)
     {
@@ -369,8 +361,8 @@ Shape createShape(std::vector<float>& verts) {
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(
-        0,          // attribute index in shader
-        2,          // vec2
+        0,          
+        2,          
         GL_FLOAT,
         GL_FALSE,
         2 * sizeof(float),
@@ -403,14 +395,12 @@ void uploadShape(Shape& s, const std::vector<Vec2>& verts, const std::vector<Vec
     glBindBuffer(GL_ARRAY_BUFFER, s.vbo);
     glBufferData(GL_ARRAY_BUFFER, flat.size() * sizeof(float), flat.data(), GL_STATIC_DRAW);
 
-    // position
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(
         0, 2, GL_FLOAT, GL_FALSE,
         4 * sizeof(float), (void*)0
     );
 
-    // uv coords
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(
         1, 2, GL_FLOAT, GL_FALSE,
@@ -432,16 +422,15 @@ void mouseClick(GLFWwindow* window, int button, int action, int mods)
 
         Vec2 pos = screenToWorld(mx, my);
 
-        for (int i = (int)shapes.size() - 1; i >= 0; --i)   // check top-most first
+        for (int i = (int)shapes.size() - 1; i >= 0; --i)   
         {
             Vec2 local = toLocal(pos, shapes[i]);
             if (pointInShape(local, shapes[i].baseVerts))
             {
-                // DELETE
                 glDeleteBuffers(1, &shapes[i].vbo);
                 glDeleteVertexArrays(1, &shapes[i].vao);
                 shapes.erase(shapes.begin() + i);
-                return; // stop -- do NOT create new shapes
+                return;
             }
         }
     }
@@ -518,24 +507,19 @@ void keyboardPress(GLFWwindow* window, int key, int scancode, int action, int mo
 {
     if (action != GLFW_PRESS && action != GLFW_REPEAT) return;
 
-    // Duration
     if (key == GLFW_KEY_1) maxShakeDuration -= 0.01f;
     if (key == GLFW_KEY_2) maxShakeDuration += 0.01f;
 
-    // Intensity
     if (key == GLFW_KEY_3) shakeIntensity -= 0.01f;
     if (key == GLFW_KEY_4) shakeIntensity += 0.01f;
 
-    // Oscilation
     if (key == GLFW_KEY_5) oscilation -= 0.01f;
     if (key == GLFW_KEY_6) oscilation += 0.01f;
 
-    // Clamp values to safe ranges
-    if (maxShakeDuration < 0) maxShakeDuration = 0;
-    if (shakeIntensity < 0) shakeIntensity = 0;
-    if (oscilation < 0) oscilation = 0;
+    if (maxShakeDuration < 0) maxShakeDuration = 0.00f;
+    if (shakeIntensity < 0) shakeIntensity = 0.00f;
+    if (oscilation < 0) oscilation = 0.00f;
 
-    // Existing code
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) done = true;
     if (key == GLFW_KEY_SPACE && action == GLFW_PRESS && !isShaking)
     {
@@ -610,13 +594,12 @@ int main()
     screenWidth = mode->width;
     screenHeight = mode->height;
     aspectRatio = screenWidth / screenHeight;
-    // Fullscreen window
     GLFWwindow* window = glfwCreateWindow(
         screenWidth,
         screenHeight,
         "My Fullscreen Window",
-        monitor,     // monitor → fullscreen
-        nullptr      // no shared window
+        monitor,     
+        nullptr      
     );
 
     glfwMakeContextCurrent(window);
@@ -645,10 +628,8 @@ int main()
     preprocessTexture(texSquare, "Resources/square_house.png");
     preprocessTexture(texRect, "Resources/rectangle_house.png");
 
-    // Load text shader
     textShader = createShader("Shaders/text.vert", "Shaders/text.frag");
 
-    // Initialize text rendering
     initTextRendering();
 
     double targetFrameTime = 1.0 / 75.0;
